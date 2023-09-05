@@ -21,7 +21,7 @@ export class StudentcrudComponent {
     this.getAllStudent();
   }
   getAllStudent(){
-    this.http.get("http://localhost:8000/user/getAll").subscribe((resultData: any)=>
+    this.http.get("https://backend-crud3.onrender.com/user/getAll").subscribe((resultData: any)=>
     {
       console.log(resultData);
       this.StudentArray = resultData.data;
@@ -30,7 +30,7 @@ export class StudentcrudComponent {
 
   setDelete(data: any){
 
-    this.http.delete("http://localhost:8000/user/delete"+ "/"+data._id).subscribe((resultData: any)=>
+    this.http.delete("https://backend-crud3.onrender.com/user/delete"+ "/"+data._id).subscribe((resultData: any)=>
     {
       console.log(resultData);
       alert("Student Deleted")
@@ -59,7 +59,7 @@ export class StudentcrudComponent {
       "phone" : this.phone,
     };
 
-    this.http.post("http://localhost:8000/user/create",bodyData).subscribe((resultData: any)=>
+    this.http.post("https://backend-crud3.onrender.com/user/create",bodyData).subscribe((resultData: any)=>
     {
       console.log(resultData);
       alert("Employee Registered")
@@ -78,7 +78,7 @@ UpdateRecords(){
     "phone": this.phone,
   };
 
-  this.http.patch("http://localhost:8000/user/update"+ "/"+this.currentStudentID,bodyData).subscribe((resultData: any)=>
+  this.http.patch("https://backend-crud3.onrender.com/user/update"+ "/"+this.currentStudentID,bodyData).subscribe((resultData: any)=>
     {
       console.log(resultData);
       alert("Student Updated")
